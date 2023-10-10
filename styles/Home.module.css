@@ -1,0 +1,66 @@
+.homeContainer {
+  /* @apply bg-home-background bg-no-repeat bg-cover bg-center h-screen w-screen; */
+  @apply 
+  h-screen 
+  bg-gradient-to-r from-fuchsia-400 to-violet-400
+  flex
+  flex-col
+  justify-center
+  items-center;
+}
+
+.heroContainer {
+  @apply 
+  text-zinc-100 
+  text-6xl 
+  font-bold 
+  leading-9 
+  flex
+  flex-col
+  justify-center
+  items-center
+  gap-8;
+}
+
+.headerContainer {
+  @apply
+  flex
+  flex-col
+  justify-center
+  items-center
+  gap-4;
+}
+
+.quizContainer {
+  @apply 
+  bg-green-500 
+  rounded 
+  pt-4 
+  pb-7 
+  px-6 
+  inline-block;
+}
+
+.divider {
+  @apply
+  w-4/5 h-1 bg-gradient-to-r from-green-300 to-green-300 rounded-[15.06px];
+}
+
+.subHeader {
+  @apply
+  text-green-500 
+  text-2xl
+  font-normal
+}
+
+.startButtonContainer {
+  @apply
+  rounded-lg;
+}
+.startButton {
+  @apply
+  p-5
+  bg-green-500 
+  text-lg
+  rounded-2xl;
+}
