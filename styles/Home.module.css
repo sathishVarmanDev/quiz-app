@@ -6,7 +6,8 @@
   flex
   flex-col
   justify-center
-  items-center;
+  items-center
+  md:flex-row;
 }
 
 .heroContainer {
@@ -19,21 +20,26 @@
   flex-col
   justify-center
   items-center
-  gap-8;
+  gap-8
+  md:w-full
+  md:items-start
+  md:pl-12;
 }
 
 .headerContainer {
-  @apply
-  flex
+  @apply flex
   flex-col
   justify-center
   items-center
-  gap-4;
+  gap-4
+  md:w-full
+  md:flex-row
+  md:items-center
+  md:justify-start;
 }
 
 .quizContainer {
-  @apply 
-  bg-green-500 
+  @apply bg-green-500 
   rounded 
   pt-4 
   pb-7 
@@ -42,25 +48,80 @@
 }
 
 .divider {
-  @apply
-  w-4/5 h-1 bg-gradient-to-r from-green-300 to-green-300 rounded-[15.06px];
+  @apply 
+  w-4/5 
+  h-1 
+  bg-gradient-to-r from-green-300 to-green-300 
+  rounded-[15.06px]
+  md:w-full;
 }
 
 .subHeader {
-  @apply
-  text-green-500 
+  @apply text-green-500 
   text-2xl
-  font-normal
+  font-normal;
 }
 
 .startButtonContainer {
-  @apply
-  rounded-lg;
+  @apply 
+  rounded-lg
+  z-[2];
 }
 .startButton {
-  @apply
-  p-5
+  @apply p-5
   bg-green-500 
   text-lg
   rounded-2xl;
+}
+
+.statisticsContainer {
+  @apply 
+  fixed
+  bottom-0
+  w-full
+  h-auto;
+}
+
+.statisticsImage {
+  @apply
+  object-fill
+  w-full
+  h-full;
+}
+
+.resultsContainer {
+  @apply 
+  fixed
+  bottom-0
+  right-0
+  z-[1]
+  w-auto
+  h-auto
+  /* md:w-full
+  md:flex
+  md:justify-end;
+  */
+  md:right-40;
+}
+
+.resultsImage {
+  @apply
+  object-fill
+  w-52		
+  h-auto
+  md:right-40;
+}
+
+/* .rightBanner {
+  @apply
+  hidden
+  md:block
+  md:rotate-45;
+} */
+
+.resultsRightImage {
+  @apply
+  absolute 
+  top-0 
+  right-0;
 }
