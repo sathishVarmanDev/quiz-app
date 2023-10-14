@@ -1,0 +1,9 @@
+.resultsContainer {
+    @apply
+    flex
+    flex-col
+    justify-center
+    items-center
+    h-screen
+    pb-[3.6rem];
+}
