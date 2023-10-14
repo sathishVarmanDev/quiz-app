@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "@/styles/Results.module.css";
 import Image from 'next/image';
 
-export default function index() {
+export default function Results() {
   return (
     <div className={`${styles.resultsContainer}`}>
       <div className="w-[298px] h-[220.15px] flex flex-col justify-center items-center gap-[2.5rem]">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "@/styles/Question.module.css";
 import { useRouter } from "next/router";
 
-export default function index() {
+export default function Question() {
     const [currentQuestion, setCurrentQuestion] = useState(5);
     const progressBarWidth = (currentQuestion / 5) * 100;
 
