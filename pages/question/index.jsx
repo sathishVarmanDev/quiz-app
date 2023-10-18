@@ -1,11 +1,18 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/styles/Question.module.css";
-import { useRouter } from "next/router";
+import {useRouter } from "next/router";
+import { fetchQuizData } from "@/api";
 
 export default function Question() {
-    const [currentQuestion, setCurrentQuestion] = useState(5);
-    const progressBarWidth = (currentQuestion / 5) * 100;
+    // fetch quiz
+    useEffect(() => {
+        fetchQuizData().then(data => setQuiz(data))
+    }, [])
+
+    const [quiz, setQuiz] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState(1);
+    const progressBarWidth = (currentQuestion / quiz.length) * 100;
 
     // Options
     const options = [
@@ -16,10 +23,13 @@ export default function Question() {
     const [selectedOption, setSelectedOption] = useState(null);
 
     // Letters
-    const letters = ["A", "B", "C"]
+    const letters = ["A", "B", "C", "D"]
 
     // Router
     const router = useRouter()
+    
+    console.log("currentQuestion > ", currentQuestion);
+    console.log("quiz.length > ", quiz.length);
 
     return (
         <div className={`${styles.questionContainer}`}>
@@ -47,7 +57,7 @@ export default function Question() {
             <div className={`${styles.progressBarContainer}`}>
                 <div className="left-[312px] top-0 absolute text-neutral-500 text-sm font-semibold leading-tight">
                     {" "}
-                    {currentQuestion}/5
+                    {currentQuestion}/ {quiz.length}
                 </div>
                 <div className="w-[300px] h-3 left-0 top-[4px] absolute">
                     <div className="w-[300px] h-3 left-0 top-0 absolute bg-zinc-100 rounded-2xl" />
@@ -57,7 +67,12 @@ export default function Question() {
             </div>
 
             <div className="w-[335px] h-[83px] text-blue-950 text-[22px] font-semibold leading-[30px] mx-auto mt-[2.75rem]">
-                PREDICT THE TOP LOSER (for tomorrow) across these indices
+                {
+                    quiz.length > 0 && quiz[currentQuestion] && (
+                        quiz[currentQuestion].question
+                    )
+
+                }
             </div>
 
             {/* Options */}
@@ -78,14 +93,15 @@ export default function Question() {
                             <div
                                 className={`left-[88px] top-[20px] text-base font-semibold  leading-tight ${selectedOption === option ? styles.selectedOption : `text-gray-950`}`}
                             >
-                                {options[index].split(" ")[0]}
+                                {/* {options[index].split(" ")[0]} */}
+                                {quiz.correct_answer}
                             </div>
-                            <div className={`left-[187px] top-[20px] text-base font-medium  leading-tight ${selectedOption === option ? styles.selectedOption : `text-gray-950`}`}>
+                            {/* <div className={`left-[187px] top-[20px] text-base font-medium  leading-tight ${selectedOption === option ? styles.selectedOption : `text-gray-950`}`}>
                                 {options[index].split(" ")[1]}
                             </div>
                             <div className={`left-[286px] top-[20px] text-base font-medium  leading-tight ${selectedOption === option ? styles.selectedOption : `text-red-800`}`}>
                                 {options[index].split(" ")[2]}
-                            </div>
+                            </div> */}
                         </div>
                     ))
                 }
@@ -94,7 +110,19 @@ export default function Question() {
             {/* Continue Button */}
             <div
                 className={`${selectedOption ? styles.continueButtonEnabled : styles.continueButtonDisabled}`}
-                onClick={() => selectedOption ? router.push(`/results`) : null}>
+                onClick={() => {
+                    if (selectedOption) {
+                        console.log("currentQuestion > ", currentQuestion);
+                        console.log("quiz.length > ", quiz.length);
+                        if (currentQuestion < quiz.length) {
+                            setCurrentQuestion((prevcurrentQuestion) => prevcurrentQuestion + 1)
+                            setSelectedOption(null)
+                        } else {
+                            router.push(`/results`)
+                        }
+                    }
+                }}
+            >
                 <div className="left-[124px] top-[20px] absolute text-stone-200 text-base font-semibold leading-tight">CONTINUE</div>
             </div>
 
@@ -115,7 +143,19 @@ export default function Question() {
                 </div>
                 <div
                     className={`${selectedOption ? styles.continueButtonMediumScreenEnabled : styles.continueButtonMediumScreenDisabled}`}
-                    onClick={() => selectedOption ? router.push(`/results`) : null}
+                    // onClick={() => selectedOption ? router.push(`/results`) : null}
+                    onClick={() => {
+                        if (selectedOption) {
+                            console.log("currentQuestion > ", currentQuestion);
+                            console.log("quiz.length > ", quiz.length);
+                            if (currentQuestion < quiz.length) {
+                                setCurrentQuestion((prevcurrentQuestion) => prevcurrentQuestion + 1)
+                                setSelectedOption(null)
+                            } else {
+                                router.push(`/results`)
+                            }
+                        }
+                    }}
                 >
                     <div>
                         CONTINUE

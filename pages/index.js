@@ -13,9 +13,6 @@ export default function Home() {
           <div className={`${styles.quizContainer}`}>Quiz</div> Flow
         </div>
         <div className={`${styles.divider}`} />
-        <div className={`${styles.subHeader}`}>
-          For Finance
-        </div>
         <div className={`${styles.startButtonContainer}`}>
           <button className={`${styles.startButton}`} onClick={() => router.push(`/question`)}>
             Start Quiz
