@@ -1,0 +1,23 @@
+.continueButtonDisabled {
+    @apply
+    opacity-50 
+    bg-neutral-500
+    cursor-not-allowed  
+    w-[335px] 
+    h-[60px] 
+    relative 
+    mx-auto 
+    md:hidden;
+}
+
+.continueButtonEnabled {
+    @apply
+    bg-green-500
+    hover:cursor-pointer
+    w-[335px] 
+    h-[60px] 
+    relative 
+    mx-auto 
+    mt-[9.2rem]
+    md:hidden;
+}

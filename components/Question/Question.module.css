@@ -1,0 +1,11 @@
+.questionContainer {
+    @apply
+    w-[335px] 
+    min-h-max 
+    text-blue-950 
+    text-[22px] 
+    font-semibold 
+    leading-[30px] 
+    mx-auto 
+    mt-[2.75rem]
+}

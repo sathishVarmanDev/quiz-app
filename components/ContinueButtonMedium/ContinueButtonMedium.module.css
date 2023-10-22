@@ -1,0 +1,32 @@
+.continueButtonMediumScreenEnabled {
+    @apply
+    md:flex
+    md:justify-center
+    md:items-center
+    md:bg-green-500
+    md:text-stone-200
+    md:text-base 
+    md:font-semibold 
+    md:leading-tight
+    md:rounded-lg
+    md:hover:cursor-pointer
+    md:px-[77px]
+    md:py-[20px];
+}
+
+.continueButtonMediumScreenDisabled {
+    @apply
+    md:flex
+    md:justify-center
+    md:items-center
+    md:opacity-50 
+    md:bg-neutral-500
+    md:cursor-not-allowed 
+    md:rounded-lg
+    md:text-stone-200 
+    md:text-base 
+    md:font-semibold 
+    md:leading-tight
+    md:px-[77px]
+    md:py-[20px];
+}

@@ -1,0 +1,54 @@
+.quizContainer {
+    @apply
+    flex
+    flex-col
+    min-h-screen;
+}
+
+.continueButtonDisabled {
+    @apply
+    opacity-50 
+    bg-neutral-500
+    cursor-not-allowed  
+    w-[335px] 
+    h-[60px] 
+    relative 
+    mx-auto 
+    md:hidden;
+}
+
+.continueButtonEnabled {
+    @apply
+    bg-green-500
+    hover:cursor-pointer
+    w-[335px] 
+    h-[60px] 
+    relative 
+    mx-auto 
+    mt-[9.2rem]
+    md:hidden;
+}
+
+.progressBarContainer {
+    @apply
+    w-[335px] 
+    h-5 
+    relative 
+    mx-auto 
+    mt-[1.75rem]
+    md:hidden;
+}
+
+.footerContainer {
+    @apply
+    hidden
+    md:flex
+    md:justify-center
+    md:items-center
+    md:gap-[5rem]
+    md:w-screen
+    md:h-[100px] 
+    md:bg-zinc-100
+    md:px-[23.4rem]
+    lg:gap-[13.1rem];
+}

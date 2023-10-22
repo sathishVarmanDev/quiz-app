@@ -50,7 +50,7 @@ const store = (set) => (
             {
                 loading: !store.loading
             }
-        ))
+        )),
     }
 )
 

@@ -1,0 +1,5 @@
+.dummyContainer {
+    @apply
+    block
+    grow;
+}

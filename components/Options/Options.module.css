@@ -1,0 +1,17 @@
+.optionsContainer {
+    @apply
+    flex
+    flex-col
+    gap-[1.9rem]
+    justify-center
+    items-center
+    mx-auto
+    mt-[3.4rem]
+    md:mt-[5rem];
+}
+
+.selectedOption {
+    @apply
+    bg-green-400
+    text-zinc-100;
+}
