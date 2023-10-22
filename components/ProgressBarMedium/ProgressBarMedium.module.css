@@ -1,0 +1,7 @@
+.progressBarContainerMediumScreen {
+    @apply
+    w-[335px] 
+    md:h-5 
+    md:relative;
+}
+

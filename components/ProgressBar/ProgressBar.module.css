@@ -1,0 +1,9 @@
+.progressBarContainer {
+    @apply
+    w-[335px] 
+    h-5 
+    relative 
+    mx-auto 
+    mt-[1.75rem]
+    md:hidden;
+}

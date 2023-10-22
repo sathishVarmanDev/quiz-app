@@ -1,0 +1,31 @@
+.headerContainer {
+    @apply
+    flex
+    flex-row
+    justify-between
+    items-center
+    px-[1.25rem]
+    mt-[2.5rem]
+    gap-[1.9rem];
+}
+
+.logo {
+    @apply
+    w-9 
+    h-9;
+}
+
+.exit {
+    @apply
+    w-9 
+    h-9
+    hover:cursor-pointer;
+}
+
+.header {
+    @apply
+    text-black 
+    text-lg 
+    font-semibold
+    leading-tight
+}

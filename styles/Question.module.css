@@ -5,37 +5,6 @@
     min-h-screen;
 }
 
-.headerContainer {
-    @apply
-    flex
-    flex-row
-    justify-between
-    items-center
-    px-[1.25rem]
-    mt-[2.5rem]
-    gap-[1.9rem];
-}
-
-.logo {
-    @apply
-    w-9 
-    h-9;
-}
-
-.exit {
-    @apply
-    w-9 
-    h-9;
-}
-
-.header {
-    @apply
-    text-black 
-    text-lg 
-    font-semibold
-    leading-tight
-}
-
 .optionsContainer {
     @apply
     flex
@@ -44,8 +13,14 @@
     justify-center
     items-center
     mx-auto
-    mt-[4rem]
-    md:grow;
+    mt-[3.4rem]
+    md:mt-[5rem];
+}
+
+.dummyContainer {
+    @apply
+    block
+    grow;
 }
 
 .continueButtonDisabled {
@@ -57,7 +32,6 @@
     h-[60px] 
     relative 
     mx-auto 
-    mt-[9.2rem]
     md:hidden;
 }
 
@@ -97,12 +71,12 @@
     lg:gap-[13.1rem];
 }
 
-.progressBarContainerMediumScreen {
+/* .progressBarContainerMediumScreen {
     @apply
     w-[335px] 
     md:h-5 
     md:relative;
-}
+} */
 
 .continueButtonMediumScreenEnabled {
     @apply

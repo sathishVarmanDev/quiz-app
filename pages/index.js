@@ -27,7 +27,7 @@ export default function Home() {
       </div> */}
       <Image alt='results' unoptimized width={100} height={100} src={`/resultsTwo.png`} className={`${styles.resultsImage}`} />
       <Image alt='results-right' unoptimized width={100} height={100} src={`/resultsRight.png`} className={`${styles.resultsRightImage}`} />
-      <Image alt='right-banner' unoptimized width={100} height={100} src={`/rightBanner.png`} className={`${styles.rightBanner}`} />
+      <Image alt='right-banner' unoptimized width={100} height={100} src={`/rightBanner.png`} className={`${styles.rightBanner}`} priority />
     </div>
   )
 }

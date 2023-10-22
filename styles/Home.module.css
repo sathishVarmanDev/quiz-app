@@ -85,44 +85,52 @@
   h-full;
 }
 
-.resultsContainer {
+/* .resultsContainer {
   @apply fixed
   bottom-0
   right-0
   z-[1]
   w-auto
   h-auto;
-}
+} */
 
 .resultsImage {
-  @apply absolute
+  @apply 
+  absolute
   bottom-0
   right-0
-  w-[52%]
+  w-[40%]
   h-auto
-  md:w-1/3
-  md:h-auto
-  md:right-[11rem];
+  md:hidden
+  lg:block
+  lg:w-[24%]
+  lg:h-auto
+  lg:right-[15rem]
+  xl:w-[20%];
 }
 
 .resultsRightImage {
   @apply hidden
   md:block
   md:absolute 
-  md:-top-1/2
+  md:-top-[25%]
   md:right-0
   w-auto
   h-auto;
 }
 
 .rightBanner {
-  @apply hidden
+  @apply 
+  hidden
   md:block
   md:absolute
   md:rotate-0
   md:right-0
-  md:top-[5rem]
-  md:w-1/2
+  md:top-[0]
+  md:w-[50%]
   md:h-auto
-  lg:-top-[5rem];
+  lg:-top-[5rem]
+  lg:-top-[0]
+  lg:w-[40%]
+  xl:w-[33%];
 }
