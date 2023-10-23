@@ -4,7 +4,7 @@ import { useStore } from '@/pages/store';
 
 export default function Options() {
     const letters = ["A", "B", "C", "D"];
-    const shuffledOptions = ["Option A", "Option B", "Option C", "Option D"];
+    const shuffledOptions = useStore((store) => store.shuffledOptions);
     const setSelectedOption = useStore((store) => store.setSelectedOption);
     const selectedOption = useStore((store) => store.selectedOption);
 

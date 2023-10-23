@@ -7,7 +7,9 @@
     h-[60px] 
     relative 
     mx-auto 
-    md:hidden;
+    md:hidden
+    mt-[2rem]
+    mb-[1rem];
 }
 
 .continueButtonEnabled {
@@ -19,5 +21,7 @@
     relative 
     mx-auto 
     mt-[9.2rem]
-    md:hidden;
+    md:hidden
+    mt-[2rem]
+    mb-[1rem];
 }

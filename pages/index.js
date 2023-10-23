@@ -14,7 +14,7 @@ export default function Home() {
         </div>
         <div className={`${styles.divider}`} />
         <div className={`${styles.startButtonContainer}`}>
-          <button className={`${styles.startButton}`} onClick={() => router.push(`/question`)}>
+          <button className={`${styles.startButton}`} onClick={() => router.push(`/quiz`)}>
             Start Quiz
           </button>
         </div>
@@ -22,9 +22,6 @@ export default function Home() {
       <div className={`${styles.statisticsContainer}`}>
         <Image alt='statistics' unoptimized width={100} height={100} src={`/statistics.png`} className={`${styles.statisticsImage}`} />
       </div>
-      {/* <div className={`${styles.resultsContainer}`}>
-          <Image alt='results' unoptimized width={100} height={100} src={`/resultsTwo.png`} className={`${styles.resultsImage}`} />
-      </div> */}
       <Image alt='results' unoptimized width={100} height={100} src={`/resultsTwo.png`} className={`${styles.resultsImage}`} />
       <Image alt='results-right' unoptimized width={100} height={100} src={`/resultsRight.png`} className={`${styles.resultsRightImage}`} />
       <Image alt='right-banner' unoptimized width={100} height={100} src={`/rightBanner.png`} className={`${styles.rightBanner}`} priority />

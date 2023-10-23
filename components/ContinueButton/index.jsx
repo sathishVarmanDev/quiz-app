@@ -10,6 +10,7 @@ export default function ContinueButton() {
     const currentQuestion = useStore((store) => store.currentQuestion)
     const quiz = useStore((store) => store.quiz)
     const setCurrentQuestion = useStore((store) => store.setCurrentQuestion)
+    const setCorrectAnswerCount = useStore((store) => store.setCorrectAnswerCount)
     const router = useRouter()
     
     const handleAnswerSelected = (selectedOption) => {
