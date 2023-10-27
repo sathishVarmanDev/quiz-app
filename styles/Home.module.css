@@ -60,16 +60,19 @@
   z-10;
 }
 
-.startButtonContainer {
-  @apply rounded-lg
-  z-10;
-}
+/* .startButtonContainer {
+  @apply 
+} */
 
 .startButton {
   @apply p-5
   bg-green-500 
   text-lg
-  rounded-2xl;
+  rounded-2xl
+  z-10
+  min-w-max
+  px-[2rem]
+  md:px-[3rem]
 }
 
 .statisticsContainer {

@@ -46,11 +46,14 @@ const store = (set) => (
         )),
 
         loading: true,
-        setLoading: () => set((store) => (
-            {
-                loading: !store.loading
-            }
-        )),
+        setLoading: (isLoading) => {
+            console.log("jello");
+            set((store) => (
+                {
+                    loading: isLoading
+                }
+            ))
+        },
     }
 )
 

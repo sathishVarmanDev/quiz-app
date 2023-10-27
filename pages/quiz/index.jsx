@@ -13,6 +13,8 @@ import Question from "@/components/Question";
 import Options from "@/components/Options";
 import Gap from "@/components/Gap";
 import ContinueButton from "@/components/ContinueButton";
+import Loading from "@/components/Loading";
+import ApiError from "@/components/ApiError";
 
 export default function Quiz() {
     // Letters
@@ -42,8 +44,11 @@ export default function Quiz() {
     const open = useStore((store) => store.open);
     const setOpen = useStore((store) => store.setOpen);
 
-    const loading = useStore((store) => store.loading);
-    const setLoading = useStore((store) => store.setLoading);
+    const [loading, setLoading] = useState(true)
+
+    const [apiError, setApiError] = useState(false);
+    const [fetchSuccess, setFetchSuccess] = useState(false);
+
 
     // Router
     const router = useRouter();
@@ -64,15 +69,13 @@ export default function Quiz() {
     };
 
     const handleLoading = () => {
-        return <div>Loading ...</div>;
+        // return <div>Loading ...</div>;
+        return <Loading />;
     };
 
-    // fetch quiz
-    useEffect(() => {
-        if (apiCalled === false) {
-            fetchData();
-        }
-    }, []);
+    const handleApiError = () => {
+        return <ApiError />
+    }
 
     const fetchData = async () => {
         apiCalled = true
@@ -83,21 +86,31 @@ export default function Quiz() {
                 options = shuffleArray(options)
                 setShuffledOptions(options)
                 setQuiz(data);
-                setLoading(false); // set loading to false after the data has been loaded
+                setApiError(false)
+                setFetchSuccess(true)
+                setLoading(false);
             }
         } catch (e) {
-            console.log("Error fetching data >>> ", e);
+            setLoading(false);
+            // console.log("Error fetching data >>> ", e);
             apiCalled = false
+            setApiError(true)
+            console.log("catch executed")
         }
 
     };
 
+    // fetch quiz
+    useEffect(() => {
+        if (apiCalled === false) {
+            setLoading(true)
+            fetchData();
+        }
+    }, []);
+
+
     useEffect(() => {
         if (quiz.length && quiz[currentQuestion - 1]) {
-            console.log(
-                "correct answer > ",
-                quiz[currentQuestion - 1].correct_answer
-            );
             let options = [
                 quiz[currentQuestion - 1].correct_answer,
                 ...quiz[currentQuestion - 1].incorrect_answers,
@@ -107,41 +120,49 @@ export default function Quiz() {
         }
     }, [currentQuestion]);
 
-    useEffect(() => {
-        console.log("correctAnswerCount updated: ", correctAnswerCount);
-    }, [correctAnswerCount]);
+    // Log current states
+    console.log("apiError > ", apiError);
+    console.log("loading > ", loading);
+    console.log("fetchSuccess > ", fetchSuccess);
+    console.log("apiCalled > ", apiCalled);
 
-    return loading ? (
-        handleLoading()
-    ) : (
-        <div className={`${styles.quizContainer}`}>
+    return (
 
-            {/* Header */}
-            <Header />
+        <>
+            {
+                apiError ? handleApiError() :
+                    loading ? handleLoading() :
+                        fetchSuccess ? (
+                            <div className={`${styles.quizContainer}`}>
 
-            {/* Exit Quiz Modal */}
-            {open && <ExitQuiz />}
+                                {/* Header */}
+                                <Header />
 
-            {/* Progress Bar */}
-            <ProgressBar />
+                                {/* Exit Quiz Modal */}
+                                {open && <ExitQuiz />}
 
-            {/* Question */}
-            <Question />
+                                {/* Progress Bar */}
+                                <ProgressBar />
 
-            {/* Options */}
-            <Options />
+                                {/* Question */}
+                                <Question />
 
-            {/* Dummy Container */}
-            <Gap />
+                                {/* Options */}
+                                <Options />
 
-            {/* Continue Button */}
-            <ContinueButton />
+                                {/* Dummy Container */}
+                                <Gap />
 
-            {/* Footer >md screen */}
-            <div className={`${styles.footerContainer}`}>
-                <ProgressBarMedium />
-                <ContinueButtonMedium />
-            </div>
-        </div>
-    );
+                                {/* Continue Button */}
+                                <ContinueButton />
+
+                                {/* Footer >md screen */}
+                                <div className={`${styles.footerContainer}`}>
+                                    <ProgressBarMedium />
+                                    <ContinueButtonMedium />
+                                </div>
+                            </div>
+                        ) : null}
+        </>
+    )
 }

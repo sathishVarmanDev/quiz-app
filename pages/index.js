@@ -13,11 +13,9 @@ export default function Home() {
           <div className={`${styles.quizContainer}`}>Quiz</div> Flow
         </div>
         <div className={`${styles.divider}`} />
-        <div className={`${styles.startButtonContainer}`}>
           <button className={`${styles.startButton}`} onClick={() => router.push(`/quiz`)}>
             Start Quiz
           </button>
-        </div>
       </div>
       <div className={`${styles.statisticsContainer}`}>
         <Image alt='statistics' unoptimized width={100} height={100} src={`/statistics.png`} className={`${styles.statisticsImage}`} />
