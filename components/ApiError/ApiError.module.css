@@ -1,0 +1,15 @@
+.goBack {
+  @apply 
+  border-solid
+  border-[#ff5678]
+  border-[2px]
+  text-[#ff5678]
+  px-[2rem]
+  py-[.5rem]
+  mt-[1rem]
+  rounded-xl
+  cursor-pointer
+  transition ease-in-out delay-150
+  hover:-translate-y-1 hover:scale-110
+  hover:bg-[#ff5678] hover:text-[#FFFFFF] duration-300;
+}

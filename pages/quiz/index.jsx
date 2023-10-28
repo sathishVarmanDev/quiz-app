@@ -78,7 +78,7 @@ export default function Quiz() {
     }
 
     const fetchData = async () => {
-        apiCalled = true
+        // apiCalled = true
         try {
             const data = await fetchQuizData();
             if (data.length) {
@@ -89,28 +89,27 @@ export default function Quiz() {
                 setApiError(false)
                 setFetchSuccess(true)
                 setLoading(false);
+                
             }
         } catch (e) {
             setLoading(false);
             // console.log("Error fetching data >>> ", e);
             apiCalled = false
             setApiError(true)
-            console.log("catch executed")
+            setQuiz(null)
         }
 
     };
 
     // fetch quiz
     useEffect(() => {
-        if (apiCalled === false) {
-            setLoading(true)
-            fetchData();
-        }
+        console.log("fetchData() useEffect ran")
+        fetchData();
     }, []);
 
 
     useEffect(() => {
-        if (quiz.length && quiz[currentQuestion - 1]) {
+        if (quiz && quiz.length && quiz[currentQuestion - 1]) {
             let options = [
                 quiz[currentQuestion - 1].correct_answer,
                 ...quiz[currentQuestion - 1].incorrect_answers,
@@ -125,6 +124,7 @@ export default function Quiz() {
     console.log("loading > ", loading);
     console.log("fetchSuccess > ", fetchSuccess);
     console.log("apiCalled > ", apiCalled);
+    console.log("quiz > ", quiz);
 
     return (
 

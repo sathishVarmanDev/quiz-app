@@ -41,7 +41,7 @@ export default function ContinueButton() {
             }}
         >
             <div className="left-[124px] top-[20px] absolute text-stone-200 text-base font-semibold leading-tight">
-                CONTINUE
+                {currentQuestion < quiz.length ? "CONTINUE" : "FINISH"}
             </div>
         </div>
     )

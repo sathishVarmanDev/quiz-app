@@ -41,7 +41,9 @@ export default function ContinueButtonMedium() {
                     }
                 }}
             >
-                <div>CONTINUE</div>
+                <div>
+                    {currentQuestion < quiz.length ? "CONTINUE" : "FINISH"}
+                </div>
             </div>
         </>
     )
