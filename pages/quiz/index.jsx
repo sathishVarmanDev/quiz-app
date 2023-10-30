@@ -45,6 +45,8 @@ export default function Quiz() {
     const setOpen = useStore((store) => store.setOpen);
 
     const [loading, setLoading] = useState(true)
+    // const loading = useStore((store) => store.loading);
+    // const setLoading = useStore((store) => store.setLoading);
 
     const [apiError, setApiError] = useState(false);
     const [fetchSuccess, setFetchSuccess] = useState(false);
@@ -77,6 +79,10 @@ export default function Quiz() {
         return <ApiError />
     }
 
+    // const handleQuestionRender = () => {
+    //     return <Question />
+    // }
+
     const fetchData = async () => {
         // apiCalled = true
         try {
@@ -93,7 +99,6 @@ export default function Quiz() {
             }
         } catch (e) {
             setLoading(false);
-            // console.log("Error fetching data >>> ", e);
             apiCalled = false
             setApiError(true)
             setQuiz(null)
@@ -103,7 +108,6 @@ export default function Quiz() {
 
     // fetch quiz
     useEffect(() => {
-        console.log("fetchData() useEffect ran")
         fetchData();
     }, []);
 
@@ -118,13 +122,6 @@ export default function Quiz() {
             setShuffledOptions(options);
         }
     }, [currentQuestion]);
-
-    // Log current states
-    console.log("apiError > ", apiError);
-    console.log("loading > ", loading);
-    console.log("fetchSuccess > ", fetchSuccess);
-    console.log("apiCalled > ", apiCalled);
-    console.log("quiz > ", quiz);
 
     return (
 
@@ -145,7 +142,10 @@ export default function Quiz() {
                                 <ProgressBar />
 
                                 {/* Question */}
-                                <Question />
+                                <Question
+                                    loading={loading}
+                                    question={quiz[currentQuestion - 1].question}
+                                />
 
                                 {/* Options */}
                                 <Options />
