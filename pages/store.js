@@ -1,6 +1,41 @@
 import { create } from "zustand";
 const store = (set) => (
     {
+        quizCriteria: false,
+        setQuizCriteria: (quizCriteriaState) => set(() => (
+            {
+                quizCriteria: quizCriteriaState,
+            }
+        )),
+
+        numberOfQuestions: null,
+        setNumberOfQuestions: (numberOfQuestionsState) => set(() => (
+            {
+                numberOfQuestions: numberOfQuestionsState,
+            }
+        )),
+
+        category: null,
+        setCategory: (categoryState) => set(() => (
+            {
+                category: categoryState,
+            }
+        )),
+
+        difficulty: null,
+        setDifficulty: (difficultyState) => set(() => (
+            {
+                difficulty: difficultyState,
+            }
+        )),
+
+        formOpen: false,
+        setFormOpen: (formOpenState) => set(() => (
+            {
+                formOpen: formOpenState
+            }
+        )),
+
         correctAnswerCount: 0,
         setCorrectAnswerCount: (resetCorrectAnswerCount) => set((store) => (
             {

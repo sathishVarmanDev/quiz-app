@@ -44,12 +44,16 @@ export default function Quiz() {
     const open = useStore((store) => store.open);
     const setOpen = useStore((store) => store.setOpen);
 
-    const [loading, setLoading] = useState(true)
-    // const loading = useStore((store) => store.loading);
-    // const setLoading = useStore((store) => store.setLoading);
+    // const [loading, setLoading] = useState(true)
+    const loading = useStore((store) => store.loading);
+    const setLoading = useStore((store) => store.setLoading);
 
     const [apiError, setApiError] = useState(false);
     const [fetchSuccess, setFetchSuccess] = useState(false);
+
+    const numberOfQuestions = useStore((store) => store.numberOfQuestions)
+    const category = useStore((store) => store.category)
+    const difficulty = useStore((store) => store.difficulty)
 
 
     // Router
@@ -83,11 +87,11 @@ export default function Quiz() {
     //     return <Question />
     // }
 
-    const fetchData = async () => {
-        // apiCalled = true
+    const fetchData = async (numberOfQuestions, category, difficulty) => {
         try {
-            const data = await fetchQuizData();
+            const data = await fetchQuizData(numberOfQuestions, category, difficulty);
             if (data.length) {
+                console.log("data.length executed")
                 let options = [data[0].correct_answer, ...data[0].incorrect_answers]
                 options = shuffleArray(options)
                 setShuffledOptions(options)
@@ -98,6 +102,7 @@ export default function Quiz() {
                 
             }
         } catch (e) {
+            console.log(e)
             setLoading(false);
             apiCalled = false
             setApiError(true)
@@ -108,7 +113,8 @@ export default function Quiz() {
 
     // fetch quiz
     useEffect(() => {
-        fetchData();
+        console.log(numberOfQuestions, category, difficulty);
+        fetchData(numberOfQuestions, category, difficulty);
     }, []);
 
 
@@ -143,8 +149,7 @@ export default function Quiz() {
 
                                 {/* Question */}
                                 <Question
-                                    loading={loading}
-                                    question={quiz[currentQuestion - 1].question}
+                                    // question={quiz[currentQuestion - 1].question}
                                 />
 
                                 {/* Options */}

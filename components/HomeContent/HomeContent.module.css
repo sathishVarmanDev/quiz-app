@@ -1,0 +1,140 @@
+.homeContainer {
+  @apply h-screen 
+  bg-gradient-to-r from-fuchsia-400 to-violet-400
+  flex
+  flex-col
+  justify-center
+  items-center
+  md:flex-row;
+}
+
+.heroContainer {
+  @apply text-zinc-100 
+  text-6xl 
+  font-bold 
+  leading-9 
+  flex
+  flex-col
+  justify-center
+  items-center
+  gap-8
+  md:w-full
+  md:items-start
+  md:pl-12;
+}
+
+.headerContainer {
+  @apply flex
+  flex-col
+  justify-center
+  items-center
+  gap-4
+  md:w-full
+  md:flex-row
+  md:items-center
+  md:justify-start
+  z-10;
+}
+
+.quizContainer {
+  @apply bg-green-500 
+  rounded 
+  pt-4 
+  pb-7 
+  px-6 
+  inline-block;
+}
+
+.divider {
+  @apply w-4/5 
+  h-1 
+  bg-gradient-to-r from-green-300 to-green-300 
+  rounded-[15.06px]
+  md:w-full;
+}
+
+.subHeader {
+  @apply text-green-500 
+  text-2xl
+  font-normal
+  z-10;
+}
+
+/* .startButtonContainer {
+  @apply 
+} */
+
+.startButton {
+  @apply 
+  p-5
+  bg-green-500 
+  text-lg
+  rounded-2xl
+  z-10
+  min-w-max
+  px-[2rem]
+  md:px-[3rem]
+}
+
+.statisticsContainer {
+  @apply fixed
+  bottom-0
+  w-full
+  h-auto;
+}
+
+.statisticsImage {
+  @apply object-fill
+  w-full
+  h-full;
+}
+
+/* .resultsContainer {
+  @apply fixed
+  bottom-0
+  right-0
+  z-[1]
+  w-auto
+  h-auto;
+} */
+
+.resultsImage {
+  @apply 
+  absolute
+  bottom-0
+  right-0
+  w-[40%]
+  h-auto
+  md:hidden
+  lg:block
+  lg:w-[24%]
+  lg:h-auto
+  lg:right-[15rem]
+  xl:w-[20%];
+}
+
+.resultsRightImage {
+  @apply hidden
+  md:block
+  md:absolute 
+  md:-top-[25%]
+  md:right-0
+  w-auto
+  h-auto;
+}
+
+.rightBanner {
+  @apply 
+  hidden
+  md:block
+  md:absolute
+  md:rotate-0
+  md:right-0
+  md:top-[0]
+  md:w-[50%]
+  md:h-auto
+  lg:-top-[5rem]
+  lg:-top-[0]
+  lg:w-[40%]
+  xl:w-[33%];
+}

@@ -1,0 +1,70 @@
+.root {
+  @apply fixed
+    top-[50%]
+    left-[50%]
+    translate-x-[-50%]
+    translate-y-[-50%]
+    h-screen
+    w-screen
+    flex
+    justify-center
+    items-center
+    z-20;
+}
+
+.formModal {
+  @apply relative
+  flex 
+    flex-col 
+    w-[90%]  
+    px-[2rem]
+    py-[2rem] 
+    border 
+    border-gray-200 
+    bg-white shadow
+    md:w-[50%];
+}
+
+.exit {
+    @apply
+    absolute
+    w-9 
+    h-9
+    hover:cursor-pointer
+    left-[100%]
+    bottom-[100%]
+    translate-x-[-50%]
+    translate-y-[50%];
+}
+
+.header {
+  @apply text-lg 
+    /* sm:text-sm  */
+    tracking-wide 
+    text-black;
+}
+
+.numberOfQuestions {
+  @apply flex 
+    flex-col 
+    mb-4;
+}
+
+.label {
+  @apply mb-1 
+    text-xs 
+    sm:text-sm 
+    tracking-wide 
+    text-gray-600;
+}
+
+.icon {
+  width: 0.8rem;
+  height: auto;
+}
+
+.submitButton {
+  @apply mt-6
+  p-5
+  border-solid;
+}

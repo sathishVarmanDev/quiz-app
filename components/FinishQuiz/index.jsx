@@ -8,6 +8,7 @@ export default function FinishQuiz() {
     const setSelectedOption = useStore((store) => store.setSelectedOption)
     const setCorrectAnswerCount = useStore((store) => store.setCorrectAnswerCount)
     const setLoading = useStore((store) => store.setLoading)
+    const setQuizCriteria = useStore((store) => store.setQuizCriteria)
 
     const router = useRouter()
   return (
@@ -19,6 +20,8 @@ export default function FinishQuiz() {
               setCorrectAnswerCount(0)
               setQuiz([]);
               setLoading(true); // set loading to true at the start of the new quiz
+              setQuizCriteria(false);
+              console.log("final")
               router.push(`/`);
           }}
       >

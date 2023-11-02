@@ -6,6 +6,9 @@ export default function ResultsTable() {
     const correctAnswerCount = useStore((store) => store.correctAnswerCount)
     const quiz = useStore((store) => store.quiz)
     const handleScore = () => {
+        if (!correctAnswerCount || !quiz.length) {
+            return 0;
+        }
         return correctAnswerCount / quiz.length * 100
     }
 
