@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from "./Header.module.css"
-import { useStore } from '@/pages/store'
+import { useStore } from '@/store/store.js'
 
 export default function Header() {
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/Quiz.module.css";
 import { useRouter } from "next/router";
 import { fetchQuizData } from "@/api";
-import { useStore } from "../store";
+import { useStore } from '@/store/store.js'
 import ExitQuiz from "@/components/common/ExitQuiz";
 import Header from "@/components/Header/index.jsx";
 import ProgressBar from "@/components/ProgressBar";

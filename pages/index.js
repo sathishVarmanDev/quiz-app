@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "@/styles/Home.module.css"
 import Image from 'next/image'
 import { useRouter } from "next/router"
-import { useStore } from './store'
+import { useStore } from '@/store/store.js'
 import QuizCriteria from '@/components/QuizCriteria'
 import Overlay from '@/components/Overlay'
 import HomeContent from '@/components/HomeContent'

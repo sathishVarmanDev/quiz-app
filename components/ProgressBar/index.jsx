@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./ProgressBar.module.css"
-import { useStore } from '@/pages/store';
+import { useStore } from '@/store/store.js'
 
 export default function ProgressBar() {
 

@@ -3,7 +3,7 @@ import { useFormik, Formik, Form, ErrorMessage, Field } from "formik"
 import * as Yup from 'yup'
 import styles from './QuizCriteria.module.css'
 import Image from 'next/image'
-import { useStore } from '@/pages/store'
+import { useStore } from '@/store/store.js'
 import { useRouter } from 'next/router'
 
 export default function QuizCriteria() {

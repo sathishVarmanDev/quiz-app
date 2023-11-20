@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from "./HomeContent.module.css"
 import { useRouter } from 'next/router';
-import { useStore } from '@/pages/store';
+import { useStore } from '@/store/store.js'
 
 export default function HomeContent() {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Options.module.css"
-import { useStore } from '@/pages/store';
+import { useStore } from '@/store/store.js'
 
 export default function Options() {
     const letters = ["A", "B", "C", "D"];

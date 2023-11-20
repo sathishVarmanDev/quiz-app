@@ -1,4 +1,4 @@
-import { useStore } from '@/pages/store'
+import { useStore } from '@/store/store.js'
 import Image from 'next/image'
 import React from 'react'
 

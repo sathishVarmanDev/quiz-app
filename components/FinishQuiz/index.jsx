@@ -1,4 +1,4 @@
-import { useStore } from '@/pages/store'
+import { useStore } from '@/store/store.js'
 import { useRouter } from 'next/router'
 import React from 'react'
 

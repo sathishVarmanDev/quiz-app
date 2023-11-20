@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./ContinueButton.module.css"
-import { useStore } from '@/pages/store';
+import { useStore } from '@/store/store.js'
 import { useRouter } from 'next/router';
 
 export default function ContinueButton() {
